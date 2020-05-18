@@ -1,4 +1,24 @@
-# A simple API that provides the possibility to get a weather forecast  
+# A simple API that provides the possibility to get a weather forecast
+## Requirements
+* node.js 10.x.x
+* npm 6.x.x
+* mysql 14.14
+
+
+## Project initialization
+1. Navigate to the project's root directory.
+2. Create `.env` file and copy content of `.env.example` file. Fill it in with your own credentials (like DB user and password).
+3. Run `npm install`.
+
+
+## Running project (for development)
+1. Run `npm run dev:start` from the project's root directory.
+
+## Running tests
+1. Navigate to the project's root directory.
+2. Tests are written using [Mocha](https://mochajs.org) testing framework. Run
+   `npm test:run` to execute all the tests.
+   
 ## Available APIs  
 **`GET - /weather?q={cityName}`**
 
@@ -134,6 +154,7 @@ Response body example:
     }
 ]
 ```
+Data is used from [OpenWeather](https://openweathermap.org/) service.
 
 ## How to use API
 To test these APIs you need to have some tools that enables HTTP requests 
@@ -142,3 +163,4 @@ like [Postman](https://www.getpostman.com/), [Insomnia](https://insomnia.rest/),
 ## Followups
 * set up dev environment with Docker container
 * enable pagination for history request
+* test cron job
