@@ -21,6 +21,11 @@ module.exports = class WeatherForecast extends Model {
         };
     }
 
+    /**
+     * It retrieves a list of weather forecasts by given city
+     * @param {string} cityName
+     * @returns {*|PromiseLike<T>|Promise<T>}
+     */
     static getHistoryByCity(cityName) {
         return this
             .query()
@@ -30,16 +35,32 @@ module.exports = class WeatherForecast extends Model {
                 .map(weather => ({...weather, forecast: JSON.parse(weather.forecast)})));
     }
 
+    /**
+     * It stores a weather forecast for given city
+     * @param {string} cityName
+     * @param {object} forecast
+     */
     static save({cityName, forecast}) {
         return this
             .query()
             .insert({city_name: cityName, forecast: JSON.stringify(forecast)});
     }
 
+    /**
+     * It gets current weather forecast for a given city
+     * @param {string} cityName
+     * @returns {*}
+     */
     static getCurrentByCity(cityName) {
         return OpenWeather.getCurrentByCityName(cityName);
     }
 
+    /**
+     * It gets current weather forecast by given geographical coordinates
+     * @param {string} lat
+     * @param {string} lon
+     * @returns {*}
+     */
     static getCurrentByCoordinates({lat, lon}) {
         return OpenWeather.getCurrentByCoordinates({lat, lon});
     }
