@@ -8,7 +8,8 @@
     "dev:start": "nodemon --exec babel-node app.js",
     "db:init": "bash ./scripts/create_db.sh",
     "migration:make": "knex migrate:make",
-    "migration:run": "knex migrate:latest"
+    "migration:run": "knex migrate:latest",
+    "test:run": "sh ./scripts/test.sh"
   },
   "keywords": [],
   "author": "",
@@ -18,13 +19,16 @@
     "axios": "^0.19.2",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
     "cluster": "^0.7.7",
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.1",
+    "mocha": "^7.1.2",
     "mysql": "^2.18.1",
-    "objection": "^2.1.3"
+    "objection": "^2.1.3",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
