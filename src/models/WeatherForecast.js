@@ -1,4 +1,4 @@
-require('../../config/database');
+require('../../config/database/database');
 
 const {Model} = require('objection');
 const OpenWeather = require('../services/OpenWeather');
