@@ -4,14 +4,22 @@
 * npm 6.x.x
 * mysql 14.14
 
-
 ## Project initialization
 1. Navigate to the project's root directory.
 2. Create `.env` file and copy content of `.env.example` file. Fill it in with your own credentials (like DB user and password).
 3. Run `npm install`.
 
+## Running project in development environment
+1. Navigate to the project's root directory.
+2. Make sure `8080` and `3307` ports are available on your machine. Copy content of `.env.dev` file and paste it into `.env` file.
 
-## Running project (for development)
+_Note:_ MySQL container name should be the same as the database hostname specified in the `.env` file.
+3 To build all service images run `docker-compose build` (depending on your system `docker-compose` commands may require root permission).
+4. To start all services run `docker-compose up`.
+5. Service is available on `http://localhost:8080/`.
+6. To stop all running services run `docker-compose down`.
+
+## Running project (without containers)
 1. Run `npm run dev:start` from the project's root directory.
 
 ## Running tests
@@ -161,6 +169,6 @@ To test these APIs you need to have some tools that enables HTTP requests
 like [Postman](https://www.getpostman.com/), [Insomnia](https://insomnia.rest/), or just [curl](https://curl.haxx.se/).
 
 ## Followups
-* set up dev environment with Docker container
 * enable pagination for history request
 * test cron job
+
