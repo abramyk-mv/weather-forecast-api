@@ -11,21 +11,7 @@
 
 ## Running project in development environment
 1. Navigate to the project's root directory.
-2. Make sure `8080` and `3307` ports are available on your machine. Change content of your `.env` file to the following mock data:
-```
-PORT=8080
-NODE_ENV=development
-
-DB_PORT=3307
-DB_HOST=mysql
-DB_USER=root
-DB_PASSWORD=root
-DB_USE=weather
-DB_USE_TEST=weather_test
-
-OPEN_WEATHER_API_KEY=40541c59f692642fe2679ab49c0e5a73
-
-```
+2. Make sure `8080` and `3307` ports are available on your machine. Copy content of `.env.dev` file and paste it into `.env` file.
 
 _Note:_ MySQL container name should be the same as the database hostname specified in the `.env` file.
 3 To build all service images run `docker-compose build` (depending on your system `docker-compose` commands may require root permission).
@@ -183,7 +169,6 @@ To test these APIs you need to have some tools that enables HTTP requests
 like [Postman](https://www.getpostman.com/), [Insomnia](https://insomnia.rest/), or just [curl](https://curl.haxx.se/).
 
 ## Followups
-* set up dev environment with Docker container
 * enable pagination for history request
 * test cron job
 
