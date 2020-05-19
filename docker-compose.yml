@@ -1,15 +1,16 @@
 version: '2.1'
 services:
   mysql:
-    build: ./config/database
+    build: ./config/database/development
     container_name: mysql
     command: --default-authentication-plugin=mysql_native_password
     environment:
+      - MYSQL_ROOT_USER=root
       - MYSQL_ROOT_PASSWORD=root
     ports:
       - "3307:3306"
     healthcheck:
-      test: "exit 0"
+      test: mysql --user=$$MYSQL_ROOT_USER --password=$$MYSQL_ROOT_PASSWORD
     restart: always
 
   app:
@@ -24,4 +25,4 @@ services:
     ports:
       - "8080:8080"
     restart: always
-    command: ["/bin/sh", "-c", "npm run dev:start"]
+    command: ["/bin/sh", "-c", "npm run migration:run; npm run dev:start"]

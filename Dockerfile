@@ -1,4 +1,4 @@
-FROM node:12.16
+FROM node:10.17
 
 ARG NODE_ENV
 
