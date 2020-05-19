@@ -1,7 +1,7 @@
 const WeatherForecast = require('../models/WeatherForecast');
 
 exports.getCurrent = (req, res) => {
-    let current = Promise.reject(new Error('Failed to get current weather. Check if your query follows rules'));
+    let current = () => Promise.reject(new Error('Failed to get current weather. Check if your query follows rules'));
 
     if (req.query.q) {
         current = WeatherForecast.getCurrentByCity(req.query.q);
