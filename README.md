@@ -33,7 +33,7 @@
 ## Available APIs  
 **`GET - /weather?q={cityName}`**
 
-The API gets current weather forecast by given city.
+The API gets current weather forecast by a given city.
 Parameters:
 *cityName* name of the city
 <br>
@@ -168,7 +168,7 @@ Response body example:
 Data is used from [OpenWeather](https://openweathermap.org/) service.
 
 ## How to use API
-To test these APIs you need to have some tools that enables HTTP requests 
+To test these APIs you need to have some tools that enable HTTP requests 
 like [Postman](https://www.getpostman.com/), [Insomnia](https://insomnia.rest/), or just [curl](https://curl.haxx.se/).
 
 ## Followups
